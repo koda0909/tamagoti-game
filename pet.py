@@ -1,6 +1,8 @@
 # 펫 한마리를 표현하는 클래스
 
 import random
+# from config import START_HUNGER, START_HAPPY, START_ENERGY
+import config
 
 
 class Pet:
@@ -9,9 +11,9 @@ class Pet:
 
     def __init__(self, name):
         self.name = name  # 이름
-        self.hunger = 30 # 배고픔 (0 ~ 100)
-        self.happy = 70 # 행복도 (0 ~ 100)
-        self.energy = 70 # 에너지 (0 ~ 100)
+        self.hunger = config.START_HUNGER # 배고픔 (0 ~ 100)
+        self.happy = config.START_HAPPY   # 행복도 (0 ~ 100)
+        self.energy = config.START_ENERGY # 에너지 (0 ~ 100)
         self.alive = True
         Pet.count += 1
 
@@ -94,3 +96,5 @@ while choco.alive:
     day += 1
 
 print(choco)
+
+print("pet.py 의 __name__:", __name__)
